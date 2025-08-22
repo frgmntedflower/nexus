@@ -1,0 +1,16 @@
+{
+  "username": "Lulu",
+  "theme": "dark",
+  "server_url": "https://api.example.com",
+  "auto_login": true,
+  "notifications": {
+    "sound": true,
+    "popup": true
+  },
+  "window": {
+    "width": 800,
+    "height": 500,
+    "x": 100,
+    "y": 100
+  }
+}
