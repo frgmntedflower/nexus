@@ -24,11 +24,9 @@ public:
 
         auto* layout = new QVBoxLayout(this);
 
-        // Example setting: Dark mode toggle
         auto* darkModeCheck = new QCheckBox("Enable Dark Mode", this);
         darkModeCheck->setChecked(true); // default value
 
-        // Example setting: notifications
         auto* notificationsCheck = new QCheckBox("Enable Notifications", this);
         notificationsCheck->setChecked(false);
 
@@ -38,7 +36,6 @@ public:
 
         layout->addStretch();
 
-        // OK and Cancel buttons
         auto* buttonLayout = new QHBoxLayout();
         auto* okButton = new QPushButton("OK", this);
         auto* cancelButton = new QPushButton("Cancel", this);
