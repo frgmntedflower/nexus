@@ -43,13 +43,6 @@ public:
         mainLayout->addWidget(usernameLabel);
         mainLayout->addWidget(usernameEdit);
 
-        auto* emailLabel = new QLabel("Email:", this);
-        auto* emailEdit = new QLineEdit(this);
-        emailEdit->setText("lulu@example.com");
-
-        mainLayout->addWidget(emailLabel);
-        mainLayout->addWidget(emailEdit);
-
         // Public Key
         auto* publicKeyLabel = new QLabel("Public Key Path:", this);
         auto* publicKeyEdit = new QLineEdit(this);
