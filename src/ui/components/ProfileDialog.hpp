@@ -43,8 +43,8 @@ public:
         mainLayout->addWidget(usernameLabel);
         mainLayout->addWidget(usernameEdit);
 
-        // Public Key
         auto* publicKeyLabel = new QLabel("Public Key Path:", this);
+
         auto* publicKeyEdit = new QLineEdit(this);
         publicKeyEdit->setText("/path/to/public_key.pem");
 

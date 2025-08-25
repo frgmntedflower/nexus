@@ -15,8 +15,12 @@
 #include <QLabel>
 #include <QtSvg/qsvgrenderer.h>
 #include <QPainter>
+
+#include "components/NewChatDialog.hpp"
 #include "components/SettingsDialog.hpp"
 #include "components/ProfileDialog.hpp"
+
+class NewChatDialog;
 
 QIcon makeWhiteIcon(const QString &path, int size = 64);
 void setup_toolbar(QMainWindow *window);
@@ -110,7 +114,6 @@ void setup_ui(QApplication &app, const Config& cfg) {
 
     QObject::connect(messageInput, &QLineEdit::returnPressed, sendButton, &QPushButton::click);
 
-    // Dark theme
     const QString darkStyle = R"(
         QWidget {
             background-color: #2b2b2b;
@@ -156,7 +159,7 @@ void setup_toolbar(QMainWindow *window) {
     auto *profileAction = toolbar->addAction(makeWhiteIcon(":/icons/profile.svg"), "Profile");
     profileAction->setToolTip("Open Profile");
 
-    auto spacer = new QWidget();
+    const auto spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
     toolbar->addWidget(spacer);
 
@@ -167,7 +170,11 @@ void setup_toolbar(QMainWindow *window) {
     logoutAction->setToolTip("Logout User");
 
     QObject::connect(newChatAction, &QAction::triggered, []() {
-        qDebug("New chat action triggered.");
+        if (NewChatDialog dlg; dlg.exec() == QDialog::Accepted) {
+            qDebug("New chat dialog accepted!");
+        } else {
+            qDebug("New chat dialog canceled!");
+        }
     });
     QObject::connect(settingsAction, &QAction::triggered, [window]() {
         if (SettingsDialog dlg(window); dlg.exec() == QDialog::Accepted) {

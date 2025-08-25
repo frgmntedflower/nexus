@@ -26,6 +26,7 @@ set(SOURCES
         src/ui/main_ui.h
         src/ui/components/ProfileDialog.hpp
         src/ui/components/SettingsDialog.hpp
+        src/ui/components/NewChatDialog.hpp
 )
 
 # Generate Qt resources
