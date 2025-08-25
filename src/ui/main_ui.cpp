@@ -169,8 +169,8 @@ void setup_toolbar(QMainWindow *window) {
     auto* logoutAction = toolbar->addAction(makeWhiteIcon(":/icons/logout.svg"), "Logout");
     logoutAction->setToolTip("Logout User");
 
-    QObject::connect(newChatAction, &QAction::triggered, []() {
-        if (NewChatDialog dlg; dlg.exec() == QDialog::Accepted) {
+    QObject::connect(newChatAction, &QAction::triggered, [window]() {
+        if (NewChatDialog dlg(window); dlg.exec() == QDialog::Accepted) {
             qDebug("New chat dialog accepted!");
         } else {
             qDebug("New chat dialog canceled!");

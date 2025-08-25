@@ -1,0 +1,8 @@
+//
+// Created by aki on 8/25/2025.
+//
+
+#ifndef NEXUS_EVENTADDRESSES_HPP
+#define NEXUS_EVENTADDRESSES_HPP
+
+#endif //NEXUS_EVENTADDRESSES_HPP

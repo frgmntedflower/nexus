@@ -27,6 +27,16 @@ set(SOURCES
         src/ui/components/ProfileDialog.hpp
         src/ui/components/SettingsDialog.hpp
         src/ui/components/NewChatDialog.hpp
+        src/eventbus/Beepboop.cpp
+        src/eventbus/Beepboop.hpp
+        src/eventbus/Beepboop.hpp
+        src/eventbus/Beepboop.cpp
+        src/eventbus/EventAddresses.hpp
+        src/eventbus/EventAddresses.hpp
+        src/eventbus/Event.hpp
+        src/eventbus/Event.hpp
+        src/util/key_gen.hpp
+        src/util/key_gen.hpp
 )
 
 # Generate Qt resources

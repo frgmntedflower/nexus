@@ -3,6 +3,7 @@
   "theme": "dark",
   "server_url": "https://api.example.com",
   "auto_login": true,
+  "install_path": "C:\\Program Files\\Nexus Chat",
   "notifications": {
     "sound": true,
     "popup": true

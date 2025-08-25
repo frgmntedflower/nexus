@@ -23,6 +23,7 @@ struct Config {
     std::string server_url;
     std::string theme;
     Notifications notifications;
+    std::string install_path;
 
     void load(const std::string& path) {
         std::ifstream file(path);
@@ -32,6 +33,7 @@ struct Config {
         username = j.value("username", "default_user");
         server_url = j.value("server_url", "https://api.example.com");
         theme = j.value("theme", "light");
+        install_path = j.value("install_path", "C:\\Program Files\\Nexus Chat");
         notifications.sound = j["notifications"].value("sound", true);
         notifications.popup = j["notifications"].value("popup", true);
     }
@@ -41,6 +43,7 @@ struct Config {
         j["username"] = username;
         j["server_url"] = server_url;
         j["theme"] = theme;
+        j["install_path"] = install_path;
         j["notifications"]["sound"] = notifications.sound;
         j["notifications"]["popup"] = notifications.popup;
         std::ofstream file(path);

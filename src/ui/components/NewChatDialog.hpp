@@ -3,7 +3,6 @@
 
 #pragma once
 #include <QDialog>
-#include <QCheckBox>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QLabel>
@@ -18,20 +17,25 @@ public:
         : QDialog(parent)
     {
         setWindowTitle("Start new chat");
-        setMinimumSize(400, 300);
+        setMinimumSize(300, 150);
 
         auto* mainLayout = new QVBoxLayout(this);
 
-        auto* addUserEdit = new QLineEdit(this);
-        addUserEdit->setText("Enter username...");
-
-        auto* openFileButton = new QPushButton("Send request", this);
+        mainLayout->addStretch();
 
         auto* fileLayout = new QHBoxLayout();
-        fileLayout->addWidget(addUserEdit);
-        fileLayout->addWidget(openFileButton);
+        auto* addUserEdit = new QLineEdit(this);
+        addUserEdit->setPlaceholderText("Enter username...");
+        addUserEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+
+        auto* openFileButton = new QPushButton("Send", this);
+        openFileButton->setFixedWidth(100);
+
+        fileLayout->addWidget(addUserEdit, 3);
+        fileLayout->addWidget(openFileButton, 1);
 
         mainLayout->addLayout(fileLayout);
+
         mainLayout->addStretch();
 
         auto* buttonLayout = new QHBoxLayout();
@@ -57,4 +61,4 @@ public:
     }
 };
 
-#endif //NEXUS_NEWCHATDIALOG_H
+#endif // NEXUS_NEWCHATDIALOG_H
